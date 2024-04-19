@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h2 class="display-4" style="font-size: 50px;">Ingressos disponiveis</h2>
+        <div class="table-responsive" text-align="center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="font-size: 25px;">Lugar</th>
+                        <th class="text-center" style="font-size: 25px;">Valor</th>
+                        <th class="text-center" style="font-size: 25px;">Comprar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for  Reserva in ingressos %}
+                    <tr>
+                        <td style="line-height: 60px;font-size: 20px;" > {{Reserva.lugar}}</td>
+                        <td class="text-center" ><p>R${{Reserva.valor}}</p></td>
+                        <td class="text-center">
+                            <a href={% url 'transacao' Reserva.lugar %}> 
+                                <button class="btn btn-primary btn-block text-center d-block pull-right" type="button" style="float: right ; height: 61px;background-color: #ff4000;"><small>Link</small></button></td>
+                            </a>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr></tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>   
+{% endblock content %}

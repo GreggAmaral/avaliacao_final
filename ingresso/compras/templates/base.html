@@ -1,0 +1,33 @@
+{% load static %}
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="stylesheet" href={% static 'css/styles.css' %}>
+    <link rel="stylesheet" href={% static 'css/card.css' %}>
+
+
+    <nav class="navbar navbar-expand-md bg-body py-3" style="background: linear-gradient(#000000 100%, white 100%);">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><img src={% static 'imgs/logo.png' %} style="width: 50px;margin-right: 10px;"><span style="color: #ff0000;font-size: 15px;font-weight: bold;text-align: left;">Ingresos.com</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link active" href="/" style="color: var(--bs-emphasis-color);text-align: center;background: linear-gradient(rgba(255,0,0,0.83) 97%, rgba(56,163,165,0.7250000000000012) 99%, #38a3a5 100%, black 100%, white 100%), linear-gradient(rgba(56,163,165,0.34) 97%, rgba(56,163,165,0.7250000000000012) 99%, #38a3a5 100%, black 100%, white 100%);border-radius: 20px;margin-right: 5px;">Ingressos</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link active" href="/accounts/logout" style="color: var(--bs-navbar-active-color);text-align: center;background: linear-gradient(rgba(255,0,0,0.85) 97%, rgba(56,163,165,0.7250000000000012) 99%, #38a3a5 100%, black 100%, white 100%), linear-gradient(rgba(56,163,165,0.34) 97%, rgba(56,163,165,0.7250000000000012) 99%, #38a3a5 100%, black 100%, white 100%);border-radius: 20px;margin-right: 5px;">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+    <script src="{% static 'js/boots.min.js' %}"></script>
+    <script id="bs-live-reload" data-sseport="5000" data-lastchange="1711751623914" src="{% static 'js/boots.min.js' %}"></script>
+</head>
+<body>
+    {% block content %} {% endblock %}
+</body>
+</html>
